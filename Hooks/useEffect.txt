@@ -18,7 +18,7 @@ function MyComponent() {
       // This cleanup function will be executed before the component is unmounted
       // Perform any cleanup or unsubscribe here
     };
-  }, []); // The second argument is an array of dependencies
+  }, []); // The second argument is an array of dependencies. useEffect hit every time a change in any of these dependencies
 
   return (
     // JSX code for your component
