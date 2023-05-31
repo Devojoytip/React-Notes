@@ -1,0 +1,33 @@
+The useEffect hook allows you to perform side effects in functional components. 
+Side effects can include fetching data, subscribing to events, manipulating the DOM, and more.
+
+This function will be executed after the component is rendered
+
+CODE:
+
+import React, { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // This function will be executed after the component is rendered
+
+    // Perform any side effect here, such as fetching data or subscribing to events
+
+    // Return a cleanup function if needed
+    return () => {
+      // This cleanup function will be executed before the component is unmounted
+      // Perform any cleanup or unsubscribe here
+    };
+  }, []); // The second argument is an array of dependencies
+
+  return (
+    // JSX code for your component
+  );
+}
+
+If the dependencies array is empty ([]), the effect runs only once after the initial render. It behaves similar to the componentDidMount lifecycle method.
+
+If the dependencies array contains values, such as [value1, value2], the effect will run after the initial render and whenever any of the values in the dependencies array change. 
+It will also run after the initial render if any of the values in the dependencies array are undefined.
+
+If the dependencies array is not provided, the effect runs after every render. It behaves similar to the componentDidUpdate lifecycle method.
